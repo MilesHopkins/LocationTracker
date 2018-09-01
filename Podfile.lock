@@ -1,0 +1,36 @@
+PODS:
+  - ISHPullUp (1.0.5)
+  - SwifterSwift (4.4.0):
+    - SwifterSwift/AppKit (= 4.4.0)
+    - SwifterSwift/CoreGraphics (= 4.4.0)
+    - SwifterSwift/CoreLocation (= 4.4.0)
+    - SwifterSwift/Foundation (= 4.4.0)
+    - SwifterSwift/MapKit (= 4.4.0)
+    - SwifterSwift/SpriteKit (= 4.4.0)
+    - SwifterSwift/SwiftStdlib (= 4.4.0)
+    - SwifterSwift/UIKit (= 4.4.0)
+  - SwifterSwift/AppKit (4.4.0)
+  - SwifterSwift/CoreGraphics (4.4.0)
+  - SwifterSwift/CoreLocation (4.4.0)
+  - SwifterSwift/Foundation (4.4.0)
+  - SwifterSwift/MapKit (4.4.0)
+  - SwifterSwift/SpriteKit (4.4.0)
+  - SwifterSwift/SwiftStdlib (4.4.0)
+  - SwifterSwift/UIKit (4.4.0)
+
+DEPENDENCIES:
+  - ISHPullUp (= 1.0.5)
+  - SwifterSwift (= 4.4)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ISHPullUp
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  ISHPullUp: 2a7208631422b91c7d5ce4556c86d182921823df
+  SwifterSwift: 1ce0e31801ddd3a2bd3256626275425adb01067a
+
+PODFILE CHECKSUM: 53b37bc5708c133c79e5c3ef7cae46dcf64abdeb
+
+COCOAPODS: 1.5.3
