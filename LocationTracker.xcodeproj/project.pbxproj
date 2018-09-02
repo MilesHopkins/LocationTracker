@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0260C693213C325E00C78EC3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260C692213C325E00C78EC3 /* ContainerViewController.swift */; };
 		02AE0A30213B3A9D0017665E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A2F213B3A9D0017665E /* AppDelegate.swift */; };
 		02AE0A35213B3A9D0017665E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A33213B3A9D0017665E /* Main.storyboard */; };
 		02AE0A37213B3A9F0017665E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A36213B3A9F0017665E /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 		02AE0A45213B3A9F0017665E /* LocationTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A44213B3A9F0017665E /* LocationTrackerTests.swift */; };
 		02AE0A50213B3A9F0017665E /* LocationTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A4F213B3A9F0017665E /* LocationTrackerUITests.swift */; };
 		02AE0A5E213B3D480017665E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A5D213B3D480017665E /* MapViewController.swift */; };
+		02AE0A62213B48BA0017665E /* TrackingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A61213B48BA0017665E /* TrackingFunctions.swift */; };
+		02AE0A64213B49D30017665E /* SavedDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A63213B49D30017665E /* SavedDataViewController.swift */; };
 		5A950CFDE07F6DB369B6AFA9 /* Pods_LocationTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC0814D67489A839075E4DA /* Pods_LocationTracker.framework */; };
 		F043F59E8D70D94F8AC79643 /* Pods_LocationTrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3974454610A409EA8BC877E6 /* Pods_LocationTrackerUITests.framework */; };
 		FB536713826BB368F81050A9 /* Pods_LocationTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF753DA94C5A00509FAF5952 /* Pods_LocationTrackerTests.framework */; };
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0260C692213C325E00C78EC3 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		02AE0A2C213B3A9D0017665E /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AE0A2F213B3A9D0017665E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02AE0A34213B3A9D0017665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +54,8 @@
 		02AE0A4F213B3A9F0017665E /* LocationTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTrackerUITests.swift; sourceTree = "<group>"; };
 		02AE0A51213B3A9F0017665E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02AE0A5D213B3D480017665E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		02AE0A61213B48BA0017665E /* TrackingFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingFunctions.swift; sourceTree = "<group>"; };
+		02AE0A63213B49D30017665E /* SavedDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataViewController.swift; sourceTree = "<group>"; };
 		1D770F0EB6A7C880154BF493 /* Pods-LocationTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		233E62C7445EDD594E9C6AE4 /* Pods-LocationTrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerUITests/Pods-LocationTrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3974454610A409EA8BC877E6 /* Pods_LocationTrackerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocationTrackerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,12 +120,12 @@
 		02AE0A2E213B3A9D0017665E /* LocationTracker */ = {
 			isa = PBXGroup;
 			children = (
-				02AE0A2F213B3A9D0017665E /* AppDelegate.swift */,
+				02AE0A60213B45250017665E /* Supporting Files */,
 				02AE0A33213B3A9D0017665E /* Main.storyboard */,
-				02AE0A36213B3A9F0017665E /* Assets.xcassets */,
-				02AE0A38213B3A9F0017665E /* LaunchScreen.storyboard */,
-				02AE0A3B213B3A9F0017665E /* Info.plist */,
+				0260C692213C325E00C78EC3 /* ContainerViewController.swift */,
 				02AE0A5D213B3D480017665E /* MapViewController.swift */,
+				02AE0A63213B49D30017665E /* SavedDataViewController.swift */,
+				02AE0A61213B48BA0017665E /* TrackingFunctions.swift */,
 			);
 			path = LocationTracker;
 			sourceTree = "<group>";
@@ -140,6 +146,17 @@
 				02AE0A51213B3A9F0017665E /* Info.plist */,
 			);
 			path = LocationTrackerUITests;
+			sourceTree = "<group>";
+		};
+		02AE0A60213B45250017665E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02AE0A2F213B3A9D0017665E /* AppDelegate.swift */,
+				02AE0A36213B3A9F0017665E /* Assets.xcassets */,
+				02AE0A38213B3A9F0017665E /* LaunchScreen.storyboard */,
+				02AE0A3B213B3A9F0017665E /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		686BE4A53E9EBA098F68AC56 /* Pods */ = {
@@ -377,6 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AE0A62213B48BA0017665E /* TrackingFunctions.swift in Sources */,
+				02AE0A64213B49D30017665E /* SavedDataViewController.swift in Sources */,
+				0260C693213C325E00C78EC3 /* ContainerViewController.swift in Sources */,
 				02AE0A30213B3A9D0017665E /* AppDelegate.swift in Sources */,
 				02AE0A5E213B3D480017665E /* MapViewController.swift in Sources */,
 			);
@@ -554,7 +574,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PXTPTFXLWG;
-				INFOPLIST_FILE = LocationTracker/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LocationTracker/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,7 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PXTPTFXLWG;
-				INFOPLIST_FILE = LocationTracker/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LocationTracker/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,29 +7,33 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+import SwifterSwift
+import ISHPullUp
+
+class MapViewController: UIViewController, ISHPullUpContentDelegate {
+
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var trackingSwitch: UISwitch!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "Location Tracker"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    @IBAction func trackingSwitchChanged(_ sender: Any) {
+        let changedSwitch = sender as! UISwitch
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        TrackingFunctions.shared.setTracking(changedSwitch.isOn)
     }
-    */
+
+
+    func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, update edgeInsets: UIEdgeInsets, forContentViewController contentVC: UIViewController) {
+
+    }
 
 }
