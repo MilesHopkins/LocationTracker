@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0260C693213C325E00C78EC3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260C692213C325E00C78EC3 /* ContainerViewController.swift */; };
+		026445B2213DFDB900C17ACD /* vienna-graz-by-car.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 026445B1213DFDB900C17ACD /* vienna-graz-by-car.gpx */; };
 		02AE0A30213B3A9D0017665E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A2F213B3A9D0017665E /* AppDelegate.swift */; };
 		02AE0A35213B3A9D0017665E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A33213B3A9D0017665E /* Main.storyboard */; };
 		02AE0A37213B3A9F0017665E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A36213B3A9F0017665E /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		0260C692213C325E00C78EC3 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		026445B1213DFDB900C17ACD /* vienna-graz-by-car.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vienna-graz-by-car.gpx"; sourceTree = "<group>"; };
 		02AE0A2C213B3A9D0017665E /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AE0A2F213B3A9D0017665E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02AE0A34213B3A9D0017665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		02AE0A60213B45250017665E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				026445B1213DFDB900C17ACD /* vienna-graz-by-car.gpx */,
 				02AE0A2F213B3A9D0017665E /* AppDelegate.swift */,
 				02AE0A36213B3A9F0017665E /* Assets.xcassets */,
 				02AE0A38213B3A9F0017665E /* LaunchScreen.storyboard */,
@@ -254,6 +257,11 @@
 				TargetAttributes = {
 					02AE0A2B213B3A9D0017665E = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					02AE0A3F213B3A9F0017665E = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -290,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026445B2213DFDB900C17ACD /* vienna-graz-by-car.gpx in Resources */,
 				02AE0A3A213B3A9F0017665E /* LaunchScreen.storyboard in Resources */,
 				02AE0A37213B3A9F0017665E /* Assets.xcassets in Resources */,
 				02AE0A35213B3A9D0017665E /* Main.storyboard in Resources */,

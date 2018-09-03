@@ -9,6 +9,7 @@ target 'LocationTracker' do
 
 	pod 'SwifterSwift', '4.4'
 	pod 'ISHPullUp', '1.0.5'
+	pod 'RealmSwift'
 
   target 'LocationTrackerTests' do
     inherit! :search_paths

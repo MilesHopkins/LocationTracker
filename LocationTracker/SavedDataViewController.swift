@@ -19,15 +19,13 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
     public var pullUpController: ISHPullUpViewController!
 
     var maxPullUpHeight: CGFloat = UIScreen.main.bounds.height - 40
-    var minPullUpHeight: CGFloat = 100
+    var minPullUpHeight: CGFloat = 95
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navBar.prefersLargeTitles = true
         self.navBar.topItem?.title = "Saved Journeys"
-        self.navBar.barTintColor = UIColor(hexString: "78909c")
-
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         navBar.addGestureRecognizer(tapGesture)
