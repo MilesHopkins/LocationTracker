@@ -1,5 +1,10 @@
 PODS:
   - ISHPullUp (1.0.5)
+  - Realm (3.7.5):
+    - Realm/Headers (= 3.7.5)
+  - Realm/Headers (3.7.5)
+  - RealmSwift (3.7.5):
+    - Realm (= 3.7.5)
   - SwifterSwift (4.4.0):
     - SwifterSwift/AppKit (= 4.4.0)
     - SwifterSwift/CoreGraphics (= 4.4.0)
@@ -20,17 +25,22 @@ PODS:
 
 DEPENDENCIES:
   - ISHPullUp (= 1.0.5)
+  - RealmSwift
   - SwifterSwift (= 4.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ISHPullUp
+    - Realm
+    - RealmSwift
     - SwifterSwift
 
 SPEC CHECKSUMS:
   ISHPullUp: 2a7208631422b91c7d5ce4556c86d182921823df
+  Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
+  RealmSwift: 2a9281e37d6de55f66f76254d49d28aeb1b729e4
   SwifterSwift: 1ce0e31801ddd3a2bd3256626275425adb01067a
 
-PODFILE CHECKSUM: 53b37bc5708c133c79e5c3ef7cae46dcf64abdeb
+PODFILE CHECKSUM: 8f95a2c80678c4c910ae69e159c47542e871d5b3
 
 COCOAPODS: 1.5.3

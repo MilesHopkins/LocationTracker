@@ -12,7 +12,7 @@ import MapKit
 import SwifterSwift
 import ISHPullUp
 
-class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFunctionsDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
+class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFunctionsDelegate, MKMapViewDelegate {
 
 
     @IBOutlet weak var mapView: MKMapView!
@@ -37,10 +37,6 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFun
         let statusBarColor = UIColor(hexString: "004ba0")
         statusBarView.backgroundColor = statusBarColor
         view.addSubview(statusBarView)
-
-        let mapDraggedGest = UIPanGestureRecognizer(target: self, action: #selector(self.mapDragged(gestureRecognizer:)))
-        mapDraggedGest.delegate = self
-        //self.mapView.addGestureRecognizer(mapDraggedGest)
 
         trackingFunctions.delegate = self
         mapView.delegate = self
@@ -76,10 +72,6 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFun
         mapCentered = true
     }
 
-    @objc func mapDragged(gestureRecognizer: UIGestureRecognizer) {
-        mapCentered = false
-    }
-
     var isFirstCoordinate: Bool = true
 
     func currentLocation(_ currentLocation: CLLocation) {
@@ -89,6 +81,8 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFun
         }
 
         guard let currentRouteLine = currentRouteLine else { return }
+
+
 
         if isFirstCoordinate == false {
             let oldLine = currentRouteLine

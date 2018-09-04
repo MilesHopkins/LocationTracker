@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0260C693213C325E00C78EC3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260C692213C325E00C78EC3 /* ContainerViewController.swift */; };
 		026445B2213DFDB900C17ACD /* vienna-graz-by-car.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 026445B1213DFDB900C17ACD /* vienna-graz-by-car.gpx */; };
+		026445B4213E00DF00C17ACD /* RealmJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026445B3213E00DF00C17ACD /* RealmJourney.swift */; };
 		02AE0A30213B3A9D0017665E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AE0A2F213B3A9D0017665E /* AppDelegate.swift */; };
 		02AE0A35213B3A9D0017665E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A33213B3A9D0017665E /* Main.storyboard */; };
 		02AE0A37213B3A9F0017665E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02AE0A36213B3A9F0017665E /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0260C692213C325E00C78EC3 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		026445B1213DFDB900C17ACD /* vienna-graz-by-car.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "vienna-graz-by-car.gpx"; sourceTree = "<group>"; };
+		026445B3213E00DF00C17ACD /* RealmJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmJourney.swift; sourceTree = "<group>"; };
 		02AE0A2C213B3A9D0017665E /* LocationTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02AE0A2F213B3A9D0017665E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02AE0A34213B3A9D0017665E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				02AE0A5D213B3D480017665E /* MapViewController.swift */,
 				02AE0A63213B49D30017665E /* SavedDataViewController.swift */,
 				02AE0A61213B48BA0017665E /* TrackingFunctions.swift */,
+				026445B3213E00DF00C17ACD /* RealmJourney.swift */,
 			);
 			path = LocationTracker;
 			sourceTree = "<group>";
@@ -384,11 +387,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ISHPullUp/ISHPullUp.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHPullUp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				02AE0A64213B49D30017665E /* SavedDataViewController.swift in Sources */,
 				0260C693213C325E00C78EC3 /* ContainerViewController.swift in Sources */,
 				02AE0A30213B3A9D0017665E /* AppDelegate.swift in Sources */,
+				026445B4213E00DF00C17ACD /* RealmJourney.swift in Sources */,
 				02AE0A5E213B3D480017665E /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
