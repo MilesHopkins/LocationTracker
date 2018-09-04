@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 import RealmSwift
 import Realm
+import SwifterSwift
 
 public class RealmJourney: Object {
 
@@ -29,8 +30,9 @@ public class RealmJourney: Object {
         return last
     }
 
-    var duration: Double {
-        return endTime.timeIntervalSince1970 - startTime.timeIntervalSince1970
+    var duration: (hours: Double, mins: Double) {
+
+        return (endTime.hoursSince(startTime), endTime.minutesSince(startTime))
     }
 
     var averageSpeed: Double {

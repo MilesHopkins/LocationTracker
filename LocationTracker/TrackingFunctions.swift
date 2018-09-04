@@ -89,4 +89,10 @@ public class TrackingFunctions: NSObject, CLLocationManagerDelegate {
         self.locationList.removeAll()
 
     }
+
+    func retrieveJourneys() -> Results<RealmJourney> {
+
+        let results = realm.objects(RealmJourney.self)
+        return results
+    }
 }

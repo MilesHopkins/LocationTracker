@@ -9,6 +9,8 @@
 import UIKit
 
 import ISHPullUp
+import RealmSwift
+import Realm
 
 class SavedDataViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ISHPullUpSizingDelegate, ISHPullUpStateDelegate {
 
@@ -20,6 +22,7 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
 
     var maxPullUpHeight: CGFloat = UIScreen.main.bounds.height - 40
     var minPullUpHeight: CGFloat = 95
+    var savedJorneys: Results<RealmJourney> = TrackingFunctions.shared.retrieveJourneys()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +32,16 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         navBar.addGestureRecognizer(tapGesture)
+
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+
+        tableView.reloadData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
+        tableView.reloadData()
     }
 
     @objc func handleTapGesture(gesture: UITapGestureRecognizer) {
@@ -42,15 +51,24 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return savedJorneys.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "journeyCell", for: indexPath) as! SavedJourneyTableViewCell
+        let currentJourney = savedJorneys[indexPath.row]
+        cell.setup(with: currentJourney)
+        
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, minimumHeightForBottomViewController bottomVC: UIViewController) -> CGFloat {
@@ -75,6 +93,9 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
         handle.setState(ISHPullUpHandleView.handleState(for: state), animated: true)
+
+        tableView.reloadData()
+
     }
 
 }
