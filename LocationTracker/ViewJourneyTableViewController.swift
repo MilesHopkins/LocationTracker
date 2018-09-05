@@ -41,6 +41,8 @@ class ViewJourneyTableViewController: UITableViewController, MKMapViewDelegate {
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "64b5f6")
         closeButton.tintColor = UIColor.black
 
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

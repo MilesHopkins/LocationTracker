@@ -118,7 +118,7 @@ class MapViewController: UIViewController, ISHPullUpContentDelegate, TrackingFun
 
     // Show error to user
     func locationError(error: String) {
-        let alert = UIAlertController(title: "Error in getting location", message: error, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Error in getting location", message: error + "\nPlease ensure location is set to 'Always' in settings", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
