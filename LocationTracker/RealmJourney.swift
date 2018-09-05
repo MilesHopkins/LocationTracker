@@ -30,9 +30,9 @@ public class RealmJourney: Object {
         return last
     }
 
-    var duration: (hours: Double, mins: Double) {
+    var duration: (hours: Double, mins: Double, secs: Double) {
 
-        return (endTime.hoursSince(startTime), endTime.minutesSince(startTime))
+        return (endTime.hoursSince(startTime), endTime.minutesSince(startTime), endTime.secondsSince(startTime))
     }
 
     var averageSpeed: Double {
@@ -45,7 +45,27 @@ public class RealmJourney: Object {
         guard let maxSpeed = speeds.max() else {
             return 0
         }
-        return maxSpeed
+
+        if maxSpeed != -1 {
+            return ((maxSpeed * 18.0) / 5.0)
+        } else {
+            var maxSpeed = 0.0
+            for index in 0 ..< (locations.count - 1) {
+                let loc1 = locations[index]
+                let loc2 = locations[index + 1]
+
+                let distanceBetween = loc1.location.distance(from: loc2.location)
+                let timeBetween = loc2.timestamp.secondsSince(loc1.timestamp)
+
+                let speedInMetersPerSecond = distanceBetween/timeBetween
+                if speedInMetersPerSecond > maxSpeed {
+                    maxSpeed = speedInMetersPerSecond
+                }
+            }
+
+            return  ((maxSpeed * 18.0) / 5.0)
+
+        }
     }
     
     var heightChange: Double {

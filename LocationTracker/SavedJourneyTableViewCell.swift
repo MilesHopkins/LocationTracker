@@ -35,13 +35,19 @@ class SavedJourneyTableViewCell: UITableViewCell {
 
         self.distanceLabel.text = String(format: "%.2f km", journey.totalDistance)
 
-        self.durationLabel.text = String(format: "%02.0fh %02.0fm", journey.duration.hours, journey.duration.mins)
+        let timeFormatter = DateComponentsFormatter()
+        timeFormatter.allowedUnits = [.hour, .minute, .second]
+        timeFormatter.unitsStyle = .abbreviated
+
+        self.durationLabel.text = timeFormatter.string(from: journey.startTime, to: journey.endTime)
+
+
 
         if journey.maxSpeed == -1 {
             self.maxSpeedLabel.text = "n/a"
             self.maxSpeedLabel.textColor = UIColor.lightGray
         } else {
-            self.maxSpeedLabel.text = String(format: "%00.02f km", journey.maxSpeed)
+            self.maxSpeedLabel.text = String(format: "%00.02f km/h", journey.maxSpeed)
             self.maxSpeedLabel.textColor = UIColor.black
         }
 

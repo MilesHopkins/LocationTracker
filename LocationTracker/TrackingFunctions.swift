@@ -53,6 +53,10 @@ public class TrackingFunctions: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last, let delegate = delegate else { return }
 
+        print(location)
+        print(locationList.count)
+        print("\n")
+
         lastLocation = location
         locationList.append(location)
 
@@ -66,27 +70,31 @@ public class TrackingFunctions: NSObject, CLLocationManagerDelegate {
 
     func saveJounrney() {
 
-        let newRealmJourney = RealmJourney()
-
-        for location in locationList {
-            let newRealmLocation = RealmLocation()
-            newRealmLocation.latitude = location.coordinate.latitude
-            newRealmLocation.longitude = location.coordinate.longitude
-            newRealmLocation.altitude = location.altitude
-            newRealmLocation.horzAcc = location.horizontalAccuracy
-            newRealmLocation.vertAcc = location.verticalAccuracy
-            newRealmLocation.course = location.course
-            newRealmLocation.speed = location.speed
-            newRealmLocation.timestamp = location.timestamp
-
-            newRealmJourney.locations.append(newRealmLocation)
-        }
-
-        try! realm.write {
-            realm.add(newRealmJourney)
+        if locationList.count > 1 {
+            
+            let newRealmJourney = RealmJourney()
+            
+            for location in locationList {
+                let newRealmLocation = RealmLocation()
+                newRealmLocation.latitude = location.coordinate.latitude
+                newRealmLocation.longitude = location.coordinate.longitude
+                newRealmLocation.altitude = location.altitude
+                newRealmLocation.horzAcc = location.horizontalAccuracy
+                newRealmLocation.vertAcc = location.verticalAccuracy
+                newRealmLocation.course = location.course
+                newRealmLocation.speed = location.speed
+                newRealmLocation.timestamp = location.timestamp
+                
+                newRealmJourney.locations.append(newRealmLocation)
+            }
+            
+            try! realm.write {
+                realm.add(newRealmJourney)
+            }
         }
 
         self.locationList.removeAll()
+        self.lastLocation = nil
 
     }
 

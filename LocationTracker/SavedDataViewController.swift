@@ -71,6 +71,19 @@ class SavedDataViewController: UIViewController, UITableViewDelegate, UITableVie
         return UITableViewAutomaticDimension
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedJourney = savedJorneys[indexPath.row]
+
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "journeyViewNav") as? UINavigationController
+
+        let vc = nav?.viewControllers.first as! ViewJourneyTableViewController
+
+        vc.journey = selectedJourney
+
+        self.present(nav!, animated: true, completion: nil)
+    }
+
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, minimumHeightForBottomViewController bottomVC: UIViewController) -> CGFloat {
         return minPullUpHeight
     }
