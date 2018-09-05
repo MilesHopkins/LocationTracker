@@ -12,6 +12,9 @@ import RealmSwift
 import Realm
 import SwifterSwift
 
+//Realm object to store the list of locations in Realm
+//Computed variables are not stored in realm, so all variables other than locations are computed when needed
+
 public class RealmJourney: Object {
 
     var locations: List<RealmLocation> = List<RealmLocation>()
@@ -31,13 +34,32 @@ public class RealmJourney: Object {
     }
 
     var duration: (hours: Double, mins: Double, secs: Double) {
-
         return (endTime.hoursSince(startTime), endTime.minutesSince(startTime), endTime.secondsSince(startTime))
     }
 
+
     var averageSpeed: Double {
         let speeds = locations.map({ $0.speed })
-        return speeds.average()
+
+        // If not using gps, speed is always -1, so check that and then manually work out average
+        if speeds.average() != -1 {
+            return ((speeds.average() * 18.0) / 5.0)
+        } else {
+            var allSpeeds: [Double] = []
+            for index in 0 ..< (locations.count - 1) {
+                let loc1 = locations[index]
+                let loc2 = locations[index + 1]
+
+                let distanceBetween = loc1.location.distance(from: loc2.location)
+                let timeBetween = loc2.timestamp.secondsSince(loc1.timestamp)
+
+                let speedInMetersPerSecond = distanceBetween/timeBetween
+                allSpeeds.append(speedInMetersPerSecond)
+            }
+
+            return  ((allSpeeds.average() * 18.0) / 5.0)
+
+        }
     }
 
     var maxSpeed: Double {
@@ -46,6 +68,7 @@ public class RealmJourney: Object {
             return 0
         }
 
+        // If not using gps, speed is always -1, so check that and then manually work out max
         if maxSpeed != -1 {
             return ((maxSpeed * 18.0) / 5.0)
         } else {
@@ -76,6 +99,7 @@ public class RealmJourney: Object {
         return last - first
     }
 
+    // work out distance from point to point (not as crow flies)
     var totalDistance: Double {
         var distance: Double = 0
         for index in 0 ..< (locations.count - 1) {
@@ -90,6 +114,7 @@ public class RealmJourney: Object {
 
 }
 
+//Copy of CLLocation, as only basic objects can be stored in realm
 public class RealmLocation: Object {
     @objc dynamic var latitude: Double = 0
     @objc dynamic var longitude: Double = 0

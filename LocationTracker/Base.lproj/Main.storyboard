@@ -556,6 +556,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="avSpeed" destination="yey-it-cgG" id="wv8-pN-Zon"/>
+                        <outlet property="closeButton" destination="gUg-8X-mgC" id="HiS-jz-9h7"/>
                         <outlet property="distance" destination="P02-uR-uzu" id="PkH-3C-v7Z"/>
                         <outlet property="duration" destination="kVm-uN-fq0" id="drj-nQ-U6q"/>
                         <outlet property="endTime" destination="o6n-O6-roM" id="iUL-Ad-CcE"/>

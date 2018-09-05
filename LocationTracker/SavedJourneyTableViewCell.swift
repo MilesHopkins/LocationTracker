@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Cell to display journey
+
 class SavedJourneyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellTitle: UILabel!
@@ -27,10 +29,11 @@ class SavedJourneyTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    // setup func from a supplied journey
     func setup(with journey: RealmJourney) {
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM d, yyyy 'at' h:mm a"
+        formatter.dateFormat = "MMMM d, yyyy 'at' h:mm:ss a"
         self.cellTitle.text = formatter.string(from: journey.startTime)
 
         self.distanceLabel.text = String(format: "%.2f km", journey.totalDistance)
@@ -41,15 +44,9 @@ class SavedJourneyTableViewCell: UITableViewCell {
 
         self.durationLabel.text = timeFormatter.string(from: journey.startTime, to: journey.endTime)
 
+        self.maxSpeedLabel.text = String(format: "%00.02f km/h", journey.maxSpeed)
+        self.maxSpeedLabel.textColor = UIColor.black
 
-
-        if journey.maxSpeed == -1 {
-            self.maxSpeedLabel.text = "n/a"
-            self.maxSpeedLabel.textColor = UIColor.lightGray
-        } else {
-            self.maxSpeedLabel.text = String(format: "%00.02f km/h", journey.maxSpeed)
-            self.maxSpeedLabel.textColor = UIColor.black
-        }
 
     }
 
